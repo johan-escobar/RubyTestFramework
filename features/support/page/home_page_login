@@ -1,0 +1,18 @@
+class HomePageLogin < SitePrism::Page
+  set_url "https://betway.com"
+  element :user_name, :css, "#LoginUsername"
+  element :password, :css, "#LoginPassword"
+  element :submit, :css, "#login-submit-button"
+
+  def FillInformAndSubmit
+    self.wait_for_user_name
+    self.wait_for_password
+    self.wait_for_submit
+    user_name.send_keys "escobartest1"
+    password.send_keys "123456"
+    submit.click
+  end
+
+
+
+end
